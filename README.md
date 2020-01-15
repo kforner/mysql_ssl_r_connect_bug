@@ -3,8 +3,8 @@ Reproducible example for the freeze bug when connecting from R to MySQL using SS
 
 this provides:
 - a MySQL server with SSL enabled
-- R with RMyQL and RMariaDB installed
-- scripts to reproduce the SSL freeze problem.
+- R with RMySQL and RMariaDB installed
+- scripts to reproduce the SSL connection freeze problem.
 
 ## prerequisites
 
