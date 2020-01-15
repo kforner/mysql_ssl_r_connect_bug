@@ -1,0 +1,30 @@
+# docker-compose file for building the base images
+version: '3.4'
+
+services:
+##################################################################################################################
+  mysql:
+    build: 
+      context: mysql/
+      args:
+        MYSQL_VERSION: 5.6
+    environment:
+      # default credentials
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - 33060:3306
+
+##################################################################################################################
+  r:
+    build:
+      context: R/
+      args:
+        R_FROM: rocker/r-ver:3.6.2
+    volumes:
+      - ./create_ssltest_user.R:/usr/local/bin/create_ssltest_user.R:ro
+      - ./rmariadb_ssl_connect.R:/usr/local/bin/rmariadb_ssl_connect.R:ro
+      - ./rmysql_ssl_connect.R:/usr/local/bin/rmysql_ssl_connect.R:ro
+    #entrypoint: ""
+    command: sleep infinity
+
