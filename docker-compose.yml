@@ -25,6 +25,7 @@ services:
       - ./create_ssltest_user.R:/usr/local/bin/create_ssltest_user.R:ro
       - ./rmariadb_ssl_connect.R:/usr/local/bin/rmariadb_ssl_connect.R:ro
       - ./rmysql_ssl_connect.R:/usr/local/bin/rmysql_ssl_connect.R:ro
+      - ./mysql:/mysql:ro
     #entrypoint: ""
     command: sleep infinity
 
