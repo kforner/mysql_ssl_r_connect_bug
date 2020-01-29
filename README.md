@@ -1,10 +1,10 @@
 # mysql_ssl_r_connect_bug
 Reproducible example for the freeze bug when connecting from R to MySQL using SSL
 
-this provide:
+this provides:
 - a MySQL server with SSL enabled
-- R with RMyQL and RMariaDB installed
-- scripts to reproduce the SSL freeze problem.
+- R with RMySQL and RMariaDB installed
+- scripts to reproduce the SSL connection freeze problem.
 
 ## prerequisites
 
